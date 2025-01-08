@@ -1,0 +1,67 @@
+# Intelligent ambulance management system
+
+## Project overview
+
+This project is built using Django and Django Rest Framework. It provides a robust backend through a RESTful API.
+
+## Main requirements
+
+- Django 5.1.2
+- Django Rest Framework 3.14.0
+- Python 3.12
+- drf-spectacular (OpenAPI 3)
+- django-environ
+
+## Features
+
+1. Clone the repository:
+
+    `git clone git@github.com:juancortizgonz/backend-ambulance-system.git`
+
+    Then, using the terminal move to the new repository.
+
+2. Create and activate a virtual environment:
+
+    `python -m venv venv`
+    
+    Linux/Mac:
+    
+    `source venv/bin/activate`
+
+    On Windows use:
+
+    `.\venv\Scripts\activate`
+
+3. Install the dependencies. Note that there are two requirements files. The one with the `dev` flag should only be used in local development environments, as it contains dependencies for tests and linters, so it should be avoided in production.:
+
+    `pip install -r requirements.txt`
+
+---
+
+## Usage
+
+1. Apply migrations:
+
+    `python manage.py migrate`
+
+2. Run the development server:
+    
+    `python manage.py runserver`
+
+3. Access the application at `http://127.0.0.1:8000/`
+
+---
+
+## API Endpoints
+
+All API endpoints start with `/api/v1`. The following is a list of all available endpoints:
+
+- `/auth`
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add some feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
