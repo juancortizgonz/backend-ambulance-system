@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     "rest_framework.authtoken",
     'authenticationapi',
+    'api',
 ]
 
 SPECTACULAR_SETTINGS = {
