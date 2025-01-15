@@ -73,7 +73,6 @@ class Ambulance(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Patient(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
     name = models.CharField(max_length=255)
     ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
     
