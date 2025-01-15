@@ -113,6 +113,7 @@ DATABASES = {
         "USER": env("DB_USER"),
         "PORT": env("DB_PORT"),
         "HOST": env("DB_HOST"),
+        "PASSWORD": env("DB_PASSWORD"),
         "OPTIONS": {
             "passfile": ".pgpass",
         }

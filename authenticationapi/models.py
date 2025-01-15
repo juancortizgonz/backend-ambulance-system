@@ -1,8 +1,10 @@
 from django.db import models
-from django.db.models import SET_NULL
-
+from django.conf import settings
+from django.contrib.auth.models import User
+from django.db.models.deletion import SET_NULL
 
 class Admin(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
     name = models.CharField(
         max_length=255,
         blank=False,
@@ -18,6 +20,7 @@ class Hospital(models.Model):
         SECONDARY = 'SECONDARY', 'Secondary'
         TERTIARY = 'TERTIARY', 'Tertiary'
 
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
     name = models.CharField(
         max_length=255,
         blank=False,
@@ -47,6 +50,7 @@ class Hospital(models.Model):
     description = models.TextField(blank=True, null=True)
 
 class Ambulance(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
     plate_number = models.CharField(max_length=20, unique=True)
     ambulance_type = models.CharField(
         max_length=50,
@@ -69,5 +73,7 @@ class Ambulance(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Patient(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
     name = models.CharField(max_length=255)
     ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
+    
