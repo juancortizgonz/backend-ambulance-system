@@ -50,13 +50,17 @@ This project is built using Django and Django Rest Framework. It provides a robu
 
 3. Access the application at `http://127.0.0.1:8000/`
 
+4. In order to access all the endpoints you must be authenticated. This application uses token authentication. To generate the token make a `POST` request to `api/v1/auth` endpoint and save it for later use.
+
+5. With each new request, ensure to add the `Authorization` header and add the token to it, like the following:
+
+    `Authorization: Token <generated-token>`
+
 ---
 
 ## API Endpoints
 
-All API endpoints start with `/api/v1`. The following is a list of all available endpoints:
-
-- `/auth`
+You can check all the available endpoints visiting the Swagger UI in `api/v1/schema/swagger-ui/`.
 
 ## Contributing
 
