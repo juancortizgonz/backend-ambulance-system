@@ -66,7 +66,6 @@ class Ambulance(models.Model):
     )
     capacity = models.IntegerField()
     last_inspection_date = models.DateTimeField()
-    # driver = models.ForeignKey('Driver', on_delete=models.SET_NULL, null=True)
     assigned_hospital = models.ForeignKey(Hospital, on_delete=SET_NULL, null=True, blank=True)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
     longitude = models.DecimalField(max_digits=9, decimal_places=6)
@@ -76,3 +75,14 @@ class Patient(models.Model):
     name = models.CharField(max_length=255)
     ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
     
+class AccidentReport(models.Model):
+    accident_time = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    description = models.TextField(blank=True, null=True)
+    is_active = models.BooleanField(default=True)
+    is_resolved = models.BooleanField(default=False)
+    resolved_at = models.DateTimeField(blank=True, null=True)
+    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    assigned_ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
