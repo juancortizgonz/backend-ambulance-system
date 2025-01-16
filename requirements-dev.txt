@@ -6,3 +6,4 @@ drf-spectacular
 flake8
 black
 psycopg2
+django-cors-headers
