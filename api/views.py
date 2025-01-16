@@ -1,5 +1,5 @@
-from .serializers import AdminSerializer, HospitalSerializer, AmbulanceSerializer, PatientSerializer
-from .models import Admin, Hospital, Ambulance, Patient
+from .serializers import AdminSerializer, HospitalSerializer, AmbulanceSerializer, PatientSerializer, AccidentReportSerializer
+from .models import Admin, Hospital, Ambulance, Patient, AccidentReport
 from rest_framework import generics
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
@@ -29,3 +29,24 @@ class PatientList(generics.ListAPIView):
     queryset = Patient.objects.all()
     serializer_class = PatientSerializer
     permission_classes = [IsAuthenticated, CanViewPatient]
+
+class AccidentReportList(generics.ListAPIView):
+    queryset = AccidentReport.objects.all()
+    serializer_class = AccidentReportSerializer
+    permission_classes = [IsAuthenticated]
+
+class CreateAccidentReport(generics.ListCreateAPIView):
+    queryset = AccidentReport.objects.all()
+    serializer_class = AccidentReportSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
+class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
+    queryset = AccidentReport.objects.all()
+    serializer_class = AccidentReportSerializer
+    permission_classes = [IsAuthenticated]
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
