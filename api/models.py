@@ -67,8 +67,9 @@ class Ambulance(models.Model):
     capacity = models.IntegerField()
     last_inspection_date = models.DateTimeField()
     assigned_hospital = models.ForeignKey(Hospital, on_delete=SET_NULL, null=True, blank=True)
-    latitude = models.DecimalField(max_digits=9, decimal_places=6)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    latitude = models.DecimalField(max_digits=9, decimal_places=7)
+    longitude = models.DecimalField(max_digits=9, decimal_places=7)
+    address = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Patient(models.Model):
