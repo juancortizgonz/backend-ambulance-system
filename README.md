@@ -56,6 +56,9 @@ This project is built using Django and Django Rest Framework. It provides a robu
 
     `Authorization: Token <generated-token>`
 
+6. Remember to create groups and permissions automatically using the command:
+    `python manage.py create_groups`
+
 ---
 
 ## API Endpoints
