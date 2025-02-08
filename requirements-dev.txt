@@ -8,3 +8,6 @@ black
 psycopg2
 django-cors-headers
 requests
+pytest
+pytest-django
+requests
