@@ -46,6 +46,8 @@ def assign_ambulance(serializer, data):
     if ambulances_with_time:
         closest_ambulance = ambulances_with_time[0][0]
         serializer.validated_data["assigned_ambulance"] = closest_ambulance
+        closest_ambulance.status = "in_use"
+        closest_ambulance.save()
 
     if serializer.is_valid():
         serializer.save()
