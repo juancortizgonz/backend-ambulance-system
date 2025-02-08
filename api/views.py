@@ -2,12 +2,11 @@ from .serializers import AdminSerializer, HospitalSerializer, AmbulanceSerialize
 from .models import Admin, Hospital, Ambulance, Patient, AccidentReport
 from rest_framework import generics
 from rest_framework.views import APIView
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from django.contrib.auth.decorators import user_passes_test
 from authenticationapi.permissions import CanViewAdmin, CanViewHospital, CanViewAmbulance, CanViewPatient
+from .utils import assign_ambulance
 
 # We'll use generics.ListAPIView to list all the objects of a model for now
 # https://www.django-rest-framework.org/api-guide/generic-views/
@@ -80,13 +79,13 @@ class AccidentReportList(generics.ListAPIView):
     serializer_class = AccidentReportSerializer
     permission_classes = [IsAuthenticated]
 
-class CreateAccidentReport(generics.ListCreateAPIView):
+class CreateAccidentReport(generics.CreateAPIView):
     queryset = AccidentReport.objects.all()
     serializer_class = AccidentReportSerializer
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        assign_ambulance(serializer, self.request.data)
 
 class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AccidentReport.objects.all()

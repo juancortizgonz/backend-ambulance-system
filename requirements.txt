@@ -5,3 +5,4 @@ django-environ
 drf-spectacular
 psycopg2
 django-cors-headers
+requests
