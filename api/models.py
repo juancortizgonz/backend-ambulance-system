@@ -81,7 +81,7 @@ class AccidentReport(models.Model):
     description = models.TextField(blank=True, default="")
     is_active = models.BooleanField(default=True)
     is_resolved = models.BooleanField(default=False)
-    resolved_at = models.DateTimeField(blank=True, null=True)
+    resolved_at = models.DateTimeField(auto_now=True, blank=True, null=True)
     severity = models.CharField(
         max_length=5,
         choices=[('BASIC', 'Basic'), ('UCI', 'UCI')],
