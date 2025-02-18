@@ -74,12 +74,7 @@ class PatientList(generics.ListAPIView):
     permission_classes = [IsAuthenticated, CanViewPatient]
 
 # Accident Report operations
-class AccidentReportList(generics.ListAPIView):
-    queryset = AccidentReport.objects.all()
-    serializer_class = AccidentReportSerializer
-    permission_classes = [IsAuthenticated]
-
-class CreateAccidentReport(generics.CreateAPIView):
+class ListCreateAccidentReport(generics.ListCreateAPIView):
     queryset = AccidentReport.objects.all()
     serializer_class = AccidentReportSerializer
     permission_classes = [IsAuthenticated]
