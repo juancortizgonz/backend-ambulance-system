@@ -92,3 +92,4 @@ class AccidentReport(models.Model):
     longitude = models.DecimalField(max_digits=24, decimal_places=20)
     address = models.CharField(max_length=255, blank=False, null=False, default="")
     assigned_ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
+    assigned_ambulance_user_id = models.IntegerField(blank=True, null=True)
