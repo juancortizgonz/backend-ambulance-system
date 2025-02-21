@@ -22,6 +22,8 @@ class PatientSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class AccidentReportSerializer(serializers.ModelSerializer):
+    assigned_ambulance_user_id = serializers.IntegerField(read_only=True)
+
     class Meta:
         model = AccidentReport
         fields = '__all__'

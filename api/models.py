@@ -1,5 +1,4 @@
 from django.db import models
-from django.conf import settings
 from django.contrib.auth.models import User
 from django.db.models.deletion import SET_NULL
 
@@ -12,7 +11,7 @@ class Admin(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
-    last_activity = models.DateTimeField(blank=True, null=True)
+    last_activity = models.DateTimeField(blank=True, null=True, auto_now_add=True)
 
 class Hospital(models.Model):
     class Level(models.TextChoices):
@@ -35,9 +34,8 @@ class Hospital(models.Model):
     phone_number = models.CharField(
         max_length=15,
         blank=True,
-        null=True
+        default=""
     )
-    # specialities = models.ManyToManyField('Speciality', related_name='hospitals')
     bed_capacity = models.IntegerField()
     is_available = models.BooleanField(default=True)
     latitude = models.DecimalField(max_digits=9, decimal_places=6)
@@ -47,7 +45,7 @@ class Hospital(models.Model):
         choices=Level.choices,
         default=Level.PRIMARY
     )
-    description = models.TextField(blank=True, null=True)
+    description = models.TextField(blank=True, default="")
 
 class Ambulance(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, default=None)
@@ -67,9 +65,9 @@ class Ambulance(models.Model):
     capacity = models.IntegerField()
     last_inspection_date = models.DateTimeField()
     assigned_hospital = models.ForeignKey(Hospital, on_delete=SET_NULL, null=True, blank=True)
-    latitude = models.DecimalField(max_digits=9, decimal_places=7)
-    longitude = models.DecimalField(max_digits=9, decimal_places=7)
-    address = models.CharField(max_length=255)
+    latitude = models.DecimalField(max_digits=24, decimal_places=20)
+    longitude = models.DecimalField(max_digits=24, decimal_places=20)
+    address = models.CharField(max_length=255, default="")
     created_at = models.DateTimeField(auto_now_add=True)
 
 class Patient(models.Model):
@@ -77,13 +75,21 @@ class Patient(models.Model):
     ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
     
 class AccidentReport(models.Model):
-    accident_time = models.DateTimeField(auto_now_add=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-    description = models.TextField(blank=True, null=True)
+    accident_time = models.DateTimeField(auto_now_add=True, blank=False, null=False)
+    created_at = models.DateTimeField(auto_now_add=True, blank=False, null=False)
+    updated_at = models.DateTimeField(auto_now=True, blank=False, null=False)
+    description = models.TextField(blank=True, default="")
     is_active = models.BooleanField(default=True)
     is_resolved = models.BooleanField(default=False)
-    resolved_at = models.DateTimeField(blank=True, null=True)
-    latitude = models.DecimalField(max_digits=9, decimal_places=6)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    resolved_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+    severity = models.CharField(
+        max_length=5,
+        choices=[('BASIC', 'Basic'), ('UCI', 'UCI')],
+        blank=False,
+        default='BASIC'
+    )
+    latitude = models.DecimalField(max_digits=24, decimal_places=20)
+    longitude = models.DecimalField(max_digits=24, decimal_places=20)
+    address = models.CharField(max_length=255, blank=False, null=False, default="")
     assigned_ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
+    assigned_ambulance_user_id = models.IntegerField(blank=True, null=True)

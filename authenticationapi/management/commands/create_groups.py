@@ -39,8 +39,15 @@ class Command(BaseCommand):
                 'change_patient',
                 'delete_patient',
                 'view_patient',
+                # Accident Reports
+                'add_accidentreport',
+                'change_accidentreport',
+                'delete_accidentreport',
+                'view_accidentreport'
             ],
             'Ambulance': [
+                'change_accidentreport',
+                'view_accidentreport',
                 'view_hospital',
                 'add_patient',
                 'change_patient',
@@ -55,7 +62,6 @@ class Command(BaseCommand):
                 'change_patient',
                 'delete_patient',
                 'view_patient',
-                'change_hospital',
                 'view_hospital',
             ],
             'Patient': [

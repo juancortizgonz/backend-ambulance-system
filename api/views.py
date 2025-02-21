@@ -2,12 +2,11 @@ from .serializers import AdminSerializer, HospitalSerializer, AmbulanceSerialize
 from .models import Admin, Hospital, Ambulance, Patient, AccidentReport
 from rest_framework import generics
 from rest_framework.views import APIView
-from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from django.contrib.auth.decorators import user_passes_test
-from authenticationapi.permissions import CanViewAdmin, CanViewHospital, CanViewAmbulance, CanViewPatient
+from authenticationapi.permissions import CanViewAdmin, CanViewHospital, CanViewAmbulance, CanViewPatient, CanCreateReadAmbulance, CanDetailUpdateAmbulance, CanListCreateAccidentReport, CanReadUpdateDestroyAccidentReport
+from .utils import assign_ambulance
 
 # We'll use generics.ListAPIView to list all the objects of a model for now
 # https://www.django-rest-framework.org/api-guide/generic-views/
@@ -33,13 +32,13 @@ class AmbulanceList(generics.ListAPIView):
 class CreateAmbulance(generics.ListCreateAPIView):
     queryset = Ambulance.objects.all()
     serializer_class = AmbulanceSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanCreateReadAmbulance]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
 class AmbulanceDetailUpdateDelete(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanDetailUpdateAmbulance]
 
     def get(self, request, pk):
         # This pk is the ambulance's id
@@ -75,23 +74,18 @@ class PatientList(generics.ListAPIView):
     permission_classes = [IsAuthenticated, CanViewPatient]
 
 # Accident Report operations
-class AccidentReportList(generics.ListAPIView):
+class ListCreateAccidentReport(generics.ListCreateAPIView):
     queryset = AccidentReport.objects.all()
     serializer_class = AccidentReportSerializer
-    permission_classes = [IsAuthenticated]
-
-class CreateAccidentReport(generics.ListCreateAPIView):
-    queryset = AccidentReport.objects.all()
-    serializer_class = AccidentReportSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanListCreateAccidentReport]
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        assign_ambulance(serializer, self.request.data)
 
 class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AccidentReport.objects.all()
     serializer_class = AccidentReportSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanReadUpdateDestroyAccidentReport]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)

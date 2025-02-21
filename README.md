@@ -61,6 +61,16 @@ This project is built using Django and Django Rest Framework. It provides a robu
 
 ---
 
+## Execute tests
+
+In order to execute tests, enter the following command in the root of the project:
+
+`pytest api/tests/test_<filename>.py`
+
+Make sure to replace `<filename>` with the name of the test file and ensure that you've installed all the dependencies within `requirements-dev.txt` file.
+
+---
+
 ## API Endpoints
 
 You can check all the available endpoints visiting the Swagger UI in `api/v1/schema/swagger-ui/`.
