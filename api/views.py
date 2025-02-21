@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from authenticationapi.permissions import CanViewAdmin, CanViewHospital, CanViewAmbulance, CanViewPatient
+from authenticationapi.permissions import CanViewAdmin, CanViewHospital, CanViewAmbulance, CanViewPatient, CanCreateReadAmbulance, CanDetailUpdateAmbulance, CanListCreateAccidentReport, CanReadUpdateDestroyAccidentReport
 from .utils import assign_ambulance
 
 # We'll use generics.ListAPIView to list all the objects of a model for now
@@ -32,13 +32,13 @@ class AmbulanceList(generics.ListAPIView):
 class CreateAmbulance(generics.ListCreateAPIView):
     queryset = Ambulance.objects.all()
     serializer_class = AmbulanceSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanCreateReadAmbulance]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
 class AmbulanceDetailUpdateDelete(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanDetailUpdateAmbulance]
 
     def get(self, request, pk):
         # This pk is the ambulance's id
@@ -77,7 +77,7 @@ class PatientList(generics.ListAPIView):
 class ListCreateAccidentReport(generics.ListCreateAPIView):
     queryset = AccidentReport.objects.all()
     serializer_class = AccidentReportSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanListCreateAccidentReport]
 
     def perform_create(self, serializer):
         assign_ambulance(serializer, self.request.data)
@@ -85,7 +85,7 @@ class ListCreateAccidentReport(generics.ListCreateAPIView):
 class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AccidentReport.objects.all()
     serializer_class = AccidentReportSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, CanReadUpdateDestroyAccidentReport]
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
