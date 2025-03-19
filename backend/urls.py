@@ -21,6 +21,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 
 urlpatterns = [
     path("api/v1/auth/", include("authenticationapi.urls")),
+    # path('api/v1/notifications/', include('notifications.urls')),
     path("api/v1/", include("api.urls")),
     path('admin/', admin.site.urls),
 

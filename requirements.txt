@@ -6,3 +6,5 @@ drf-spectacular
 psycopg2
 django-cors-headers
 requests
+celery
+django-celery-beat

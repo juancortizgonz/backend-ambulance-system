@@ -11,3 +11,5 @@ requests
 pytest
 pytest-django
 requests
+celery
+django-celery-beat

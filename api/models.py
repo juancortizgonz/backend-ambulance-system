@@ -93,3 +93,21 @@ class AccidentReport(models.Model):
     address = models.CharField(max_length=255, blank=False, null=False, default="")
     assigned_ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True)
     assigned_ambulance_user_id = models.IntegerField(blank=True, null=True)
+
+class DocumentType(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    description = models.TextField(blank=True, default="")
+
+class AmbulanceDocument(models.Model):
+    ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True)
+    document_type = models.ForeignKey(DocumentType, on_delete=SET_NULL, null=True)
+    document_number = models.CharField(max_length=255)
+    issue_date = models.DateTimeField()
+    expiration_date = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Notifications(models.Model):
+    user = models.ForeignKey(User, on_delete=SET_NULL)
+    message = models.TextField(blank=True, default="")
+    created_at = models.DateTimeField(auto_now_add=True)
