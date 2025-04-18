@@ -107,7 +107,7 @@ class AmbulanceDocument(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class Notifications(models.Model):
-    user = models.ForeignKey(User, on_delete=SET_NULL)
-    message = models.TextField(blank=True, default="")
+class Notification(models.Model):
+    user = models.ForeignKey(User, on_delete=SET_NULL, null=True)
+    message = models.TextField(blank=True, default="", null=True)
     created_at = models.DateTimeField(auto_now_add=True)

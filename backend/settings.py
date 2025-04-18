@@ -31,6 +31,8 @@ CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 
 # Email settings
+# DEFAULT_FROM_EMAIL = env("EMAIL_HOST_USER")
+
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_PORT = env("EMAIL_PORT")
@@ -141,6 +143,7 @@ DATABASES = {
         "PASSWORD": env("DB_PASSWORD"),
         "OPTIONS": {
             "passfile": ".pgpass",
+            "client_encoding": "UTF8",
         }
     }
 }

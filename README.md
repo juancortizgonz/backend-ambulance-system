@@ -42,6 +42,8 @@ Ensure you have the following dependencies installed:
 - **pytest**
 - **pytest-django**
 - **requests**
+- **celery**
+- **django-celery-beat**
 
 Install these dependencies via `pip` after setting up a virtual environment (see below).
 
@@ -148,6 +150,15 @@ Start the development server:
 python manage.py runserver
 ```
 The application will be available at: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+---
+
+Start celery and redis server:
+```bash
+redis-server
+celery -A backend-ambulance worker --loglevel=info
+celery -A backend-ambulance beat --loglevel=info
+```
 
 ---
 
