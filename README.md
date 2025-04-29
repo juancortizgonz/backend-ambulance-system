@@ -42,6 +42,8 @@ Ensure you have the following dependencies installed:
 - **pytest**
 - **pytest-django**
 - **requests**
+- **celery**
+- **django-celery-beat**
 
 Install these dependencies via `pip` after setting up a virtual environment (see below).
 
@@ -71,6 +73,11 @@ python -m venv venv
 
 ### **3️⃣ Install dependencies (local development)**
 ```bash
+sudo apt update
+sudo apt install redis
+sudo service redis-server start
+```
+```bash
 pip install -r requirements-dev.txt
 ```
 
@@ -89,6 +96,12 @@ DB_USER=postgres
 DB_PASSWORD=postgres
 
 DISTANCE_MATRIX_API=<your_api_key>
+
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER=email
+EMAIL_HOST_PASSWORD=password
 ```
 
 ### **5️⃣ Apply database migrations**
@@ -137,6 +150,15 @@ Start the development server:
 python manage.py runserver
 ```
 The application will be available at: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+---
+
+Start celery and redis server:
+```bash
+redis-server
+celery -A backend-ambulance worker --loglevel=info
+celery -A backend-ambulance beat --loglevel=info
+```
 
 ---
 
