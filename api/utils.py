@@ -24,33 +24,26 @@ def get_estimated_time(ambulance_lat, ambulance_long, accident_lat, accident_lon
         print(f"Error fetching estimated time: {e}")
         return None
 
-def assign_ambulance(serializer, data):
+def assign_ambulance(data):
     available_ambulances = Ambulance.objects.filter(status='available', ambulance_type=data.get("severity"))
     accident_lat = data.get("latitude")
     accident_long = data.get("longitude")
 
-    ambulances_with_time = []
+    if len(available_ambulances) > 0:
+        ambulances_with_eta = []
 
-    for ambulance in available_ambulances:
-        estimated_time = get_estimated_time(
-            ambulance.latitude,
-            ambulance.longitude,
-            accident_lat,
-            accident_long
-        )
-        ambulances_with_time.append((ambulance, estimated_time))
+        for ambulance in available_ambulances:
+            estimated_time = get_estimated_time(
+                ambulance.latitude,
+                ambulance.longitude,
+                accident_lat,
+                accident_long
+            )
+            ambulances_with_eta.append((ambulance, estimated_time))
 
 
-    ambulances_with_time.sort(key=lambda x: x[1])
+        ambulances_with_eta.sort(key=lambda x: x[1])
 
-    if ambulances_with_time:
-        closest_ambulance = ambulances_with_time[0][0]
-        serializer.validated_data["assigned_ambulance"] = closest_ambulance
-        serializer.validated_data["assigned_ambulance_user_id"] = closest_ambulance.user.id
-        closest_ambulance.status = "in_use"
-        closest_ambulance.save()
-
-    if serializer.is_valid():
-        serializer.save()
+        return ambulances_with_eta
     else:
-        print(serializer.errors)
+        return []

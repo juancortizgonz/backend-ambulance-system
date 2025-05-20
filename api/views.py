@@ -80,7 +80,8 @@ class ListCreateAccidentReport(generics.ListCreateAPIView):
     permission_classes = [IsAuthenticated, CanListCreateAccidentReport]
 
     def perform_create(self, serializer):
-        assign_ambulance(serializer, self.request.data)
+        assign_ambulance(serializer.validated_data)
+        serializer.save()
 
 class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AccidentReport.objects.all()
