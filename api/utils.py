@@ -25,7 +25,12 @@ def get_estimated_time(ambulance_lat, ambulance_long, accident_lat, accident_lon
         return None
 
 def assign_ambulance(data):
-    available_ambulances = Ambulance.objects.filter(status='available', ambulance_type=data.get("severity"))
+    capacity_required = data.get("people_involved", 1)
+    available_ambulances = Ambulance.objects.filter(
+        status='available',
+        ambulance_type=data.get("severity"),
+        capacity__gte=capacity_required
+    )
     accident_lat = data.get("latitude")
     accident_long = data.get("longitude")
 
