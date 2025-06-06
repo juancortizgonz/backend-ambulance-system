@@ -108,3 +108,24 @@ class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+class ListRecommendedAmbulances(generics.ListAPIView):
+    queryset = Ambulance.objects.all()
+    serializer_class = AmbulanceSerializer
+
+    def get(self, request, *args, **kwargs):
+        accident_report_id = self.kwargs.get('accident_report_id')
+        try:
+            accident_report = AccidentReport.objects.get(id=accident_report_id)
+        except AccidentReport.DoesNotExist:
+            return Response({"error": "Accident report not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        ambulances_with_eta = assign_ambulance(accident_report.__dict__)
+        ambulances_data = [
+            {
+                "ambulance": AmbulanceSerializer(amb[0]).data,
+                "estimated_time": amb[1]
+            }
+            for amb in ambulances_with_eta
+        ]
+        return Response(ambulances_data, status=status.HTTP_200_OK)
