@@ -115,6 +115,14 @@ python manage.py createsuperuser
 ```
 Follow the prompts to set up an admin user.
 
+### **7. Load the sample data**
+
+To load the sample data uses the following command:
+
+```bash
+python manage.py loaddata api/fixtures/*.json
+```
+
 ---
 
 ## 🔑 Authentication

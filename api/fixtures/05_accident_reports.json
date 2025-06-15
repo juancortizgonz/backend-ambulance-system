@@ -1,0 +1,71 @@
+[
+  {
+    "model": "api.accidentreport",
+    "pk": 1,
+    "fields": {
+      "accident_time": "2025-06-15T09:00:00Z",
+      "created_at": "2025-06-15T09:00:00Z",
+      "updated_at": "2025-06-15T09:00:00Z",
+      "caller_phone_number": "3001234567",
+      "description": "Accidente de tráfico en el sur de Cali, dos vehículos involucrados.",
+      "is_active": true,
+      "is_resolved": false,
+      "resolved_at": null,
+      "severity": "UCI",
+      "latitude": 3.395000,
+      "longitude": -76.529000,
+      "address": "Avenida Roosevelt #38-00, Cali",
+      "reference_point": "Cerca al Parque del Perro",
+      "type_place": 1,
+      "people_involved": 3,
+      "assigned_ambulance": 1,
+      "additional_notes": "Necesita apoyo policial."
+    }
+  },
+  {
+    "model": "api.accidentreport",
+    "pk": 2,
+    "fields": {
+      "accident_time": "2025-06-15T09:30:00Z",
+      "created_at": "2025-06-15T09:30:00Z",
+      "updated_at": "2025-06-15T09:30:00Z",
+      "caller_phone_number": "3109876543",
+      "description": "Persona desmayada en edificio de oficinas.",
+      "is_active": true,
+      "is_resolved": false,
+      "resolved_at": null,
+      "severity": "BASIC",
+      "latitude": 3.450000,
+      "longitude": -76.515000,
+      "address": "Calle 10 #6-00, Cali",
+      "reference_point": "Edificio centenario",
+      "type_place": 2,
+      "people_involved": 1,
+      "assigned_ambulance": 2,
+      "additional_notes": "Posible hipoglicemia."
+    }
+  },
+  {
+    "model": "api.accidentreport",
+    "pk": 3,
+    "fields": {
+      "accident_time": "2025-06-15T08:45:00Z",
+      "created_at": "2025-06-15T08:45:00Z",
+      "updated_at": "2025-06-15T08:45:00Z",
+      "caller_phone_number": "3201122334",
+      "description": "Colisión leve sin heridos graves en zona rural.",
+      "is_active": true,
+      "is_resolved": true,
+      "resolved_at": "2025-06-15T09:15:00Z",
+      "severity": "BASIC",
+      "latitude": 3.300000,
+      "longitude": -76.600000,
+      "address": "Vereda El Saladito, Cali",
+      "reference_point": "Cerca a la escuela rural",
+      "type_place": 4,
+      "people_involved": 2,
+      "assigned_ambulance": null,
+      "additional_notes": "Situación controlada por los involucrados."
+    }
+  }
+]

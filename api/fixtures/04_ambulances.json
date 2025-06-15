@@ -1,0 +1,87 @@
+[
+  {
+    "model": "api.ambulance",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "plate_number": "ABC-123",
+      "ambulance_type": "UCI",
+      "status": "available",
+      "capacity": 2,
+      "last_inspection_date": "2025-05-01T00:00:00Z",
+      "assigned_hospital": 1,
+      "latitude": 3.451667,
+      "longitude": -76.532778,
+      "address": "Avenida 6N #37-00, Cali",
+      "created_at": "2025-06-15T10:15:00Z"
+    }
+  },
+  {
+    "model": "api.ambulance",
+    "pk": 2,
+    "fields": {
+      "user": null,
+      "plate_number": "DEF-456",
+      "ambulance_type": "BASIC",
+      "status": "in_use",
+      "capacity": 3,
+      "last_inspection_date": "2025-04-15T00:00:00Z",
+      "assigned_hospital": 1,
+      "latitude": 3.386111,
+      "longitude": -76.534167,
+      "address": "Calle 5 #66-00, Cali",
+      "created_at": "2025-06-15T10:20:00Z"
+    }
+  },
+  {
+    "model": "api.ambulance",
+    "pk": 3,
+    "fields": {
+      "user": null,
+      "plate_number": "GHI-789",
+      "ambulance_type": "UCI",
+      "status": "out_of_service",
+      "capacity": 2,
+      "last_inspection_date": "2025-03-20T00:00:00Z",
+      "assigned_hospital": null,
+      "latitude": 3.400000,
+      "longitude": -76.510000,
+      "address": "Carrera 15 #12-50, Cali",
+      "created_at": "2025-06-15T10:25:00Z"
+    }
+  },
+  {
+    "model": "api.ambulance",
+    "pk": 4,
+    "fields": {
+      "user": null,
+      "plate_number": "JKL-012",
+      "ambulance_type": "BASIC",
+      "status": "available",
+      "capacity": 4,
+      "last_inspection_date": "2025-06-01T00:00:00Z",
+      "assigned_hospital": 1,
+      "latitude": 3.420000,
+      "longitude": -76.500000,
+      "address": "Calle 70 #1N-00, Cali",
+      "created_at": "2025-06-15T12:00:00Z"
+    }
+  },
+  {
+    "model": "api.ambulance",
+    "pk": 5,
+    "fields": {
+      "user": null,
+      "plate_number": "MNO-345",
+      "ambulance_type": "UCI",
+      "status": "available",
+      "capacity": 2,
+      "last_inspection_date": "2025-06-10T00:00:00Z",
+      "assigned_hospital": 1,
+      "latitude": 3.460000,
+      "longitude": -76.540000,
+      "address": "Avenida Cañasgordas #113-00, Cali",
+      "created_at": "2025-06-15T12:05:00Z"
+    }
+  }
+]

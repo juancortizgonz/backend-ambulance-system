@@ -22,8 +22,18 @@ class PatientSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class AccidentReportSerializer(serializers.ModelSerializer):
-    assigned_ambulance_user_id = serializers.IntegerField(read_only=True)
+    assigned_ambulance_id = serializers.PrimaryKeyRelatedField(
+        queryset=Ambulance.objects.all(),
+        source='assigned_ambulance',
+        write_only=True,
+        required=False,
+        allow_null=True
+    )
 
     class Meta:
         model = AccidentReport
         fields = '__all__'
+
+    def create(self, validated_data):
+        assigned_ambulance = validated_data.pop('assigned_ambulance', None)
+        return AccidentReport.objects.create(assigned_ambulance=assigned_ambulance, **validated_data)
