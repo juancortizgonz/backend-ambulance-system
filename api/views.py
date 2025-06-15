@@ -129,3 +129,15 @@ class ListRecommendedAmbulances(generics.ListAPIView):
             for amb in ambulances_with_eta
         ]
         return Response(ambulances_data, status=status.HTTP_200_OK)
+
+class UpdateAmbulancesByPlateNumber(generics.UpdateAPIView):
+    queryset = Ambulance.objects.all()
+    serializer_class = AmbulanceSerializer
+    permission_classes = [IsAuthenticated, CanDetailUpdateAmbulance]
+
+    def get_object(self):
+        plate_number = self.kwargs.get('plate_number')
+        return Ambulance.objects.get(plate_number=plate_number)
+
+    def perform_update(self, serializer):
+        serializer.save()

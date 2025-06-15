@@ -1,0 +1,21 @@
+[
+  {
+    "model": "api.hospital",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "name": "Hospital Universitario del Valle Evaristo Garcia",
+      "level": 3,
+      "classification": 1,
+      "address": "Carrera 39 #10-100, Cali",
+      "phone_number": "6025186000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.437222,
+      "longitude": -76.520555,
+      "description": "Hospital de tercer nivel con amplia capacidad de camas.",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 1
+    }
+  }
+]
