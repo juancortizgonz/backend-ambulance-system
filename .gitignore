@@ -32,6 +32,7 @@ __pycache__/
 *.orig
 *.log
 *.pgpass
+celerybeat-schedule
 
 # Environments
 .env

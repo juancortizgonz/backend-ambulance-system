@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 import environ
 import os
+from celery.schedules import crontab
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -25,6 +26,27 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Take environment variables from .env file
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
+# CELERY
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_TASK_POOL = 'solo'
+CELERY_BEAT_SCHEDULE = {
+    'verificar_documentos_diariamente': {
+        'task': 'notifications.tasks.verificar_documentos', 
+        'schedule': crontab(minute=0, hour=8, day_of_week=1), #Una vez por semana
+    
+    },
+}
+# Email settings
+# DEFAULT_FROM_EMAIL = env("EMAIL_HOST_USER")
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+EMAIL_USE_TLS = env("EMAIL_USE_TLS")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -52,8 +74,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     "rest_framework.authtoken",
+    'django_celery_beat',
     'authenticationapi',
     'api',
+    'notifications'
 ]
 
 SPECTACULAR_SETTINGS = {
@@ -127,6 +151,7 @@ DATABASES = {
         "PASSWORD": env("DB_PASSWORD"),
         "OPTIONS": {
             "passfile": ".pgpass",
+            "client_encoding": "UTF8",
         }
     }
 }
