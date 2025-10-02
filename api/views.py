@@ -79,8 +79,27 @@ class ListCreateAccidentReport(generics.ListCreateAPIView):
     serializer_class = AccidentReportSerializer
     permission_classes = [IsAuthenticated, CanListCreateAccidentReport]
 
-    def perform_create(self, serializer):
-        assign_ambulance(serializer, self.request.data)
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        ambulances_with_eta = assign_ambulance(serializer.validated_data)
+        ambulances_data = [
+            {
+                "ambulance": AmbulanceSerializer(amb[0]).data,
+                "estimated_time": amb[1]
+            }
+            for amb in ambulances_with_eta
+        ]
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(
+            {
+                "accident_report": serializer.data,
+                "ambulances": ambulances_data
+            },
+            status=status.HTTP_201_CREATED,
+            headers=headers
+        )
 
 class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AccidentReport.objects.all()
@@ -89,3 +108,36 @@ class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+class ListRecommendedAmbulances(generics.ListAPIView):
+    queryset = Ambulance.objects.all()
+    serializer_class = AmbulanceSerializer
+
+    def get(self, request, *args, **kwargs):
+        accident_report_id = self.kwargs.get('accident_report_id')
+        try:
+            accident_report = AccidentReport.objects.get(id=accident_report_id)
+        except AccidentReport.DoesNotExist:
+            return Response({"error": "Accident report not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        ambulances_with_eta = assign_ambulance(accident_report.__dict__)
+        ambulances_data = [
+            {
+                "ambulance": AmbulanceSerializer(amb[0]).data,
+                "estimated_time": amb[1]
+            }
+            for amb in ambulances_with_eta
+        ]
+        return Response(ambulances_data, status=status.HTTP_200_OK)
+
+class UpdateAmbulancesByPlateNumber(generics.UpdateAPIView):
+    queryset = Ambulance.objects.all()
+    serializer_class = AmbulanceSerializer
+    permission_classes = [IsAuthenticated, CanDetailUpdateAmbulance]
+
+    def get_object(self):
+        plate_number = self.kwargs.get('plate_number')
+        return Ambulance.objects.get(plate_number=plate_number)
+
+    def perform_update(self, serializer):
+        serializer.save()

@@ -8,3 +8,4 @@ django-cors-headers
 requests
 celery
 django-celery-beat
+dotenv

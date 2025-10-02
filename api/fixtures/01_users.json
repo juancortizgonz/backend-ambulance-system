@@ -1,0 +1,44 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "hospital_user_1",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "ambulance_user_1",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:05:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "username": "general_user",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:10:00Z",
+      "email": "general_user@example.com"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "username": "admin_user_1",
+      "password": "password",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:12:00Z",
+      "email": "admin_user@example.com"
+    }
+  }
+]
