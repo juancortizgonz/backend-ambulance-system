@@ -82,7 +82,15 @@ class ListCreateAccidentReport(generics.ListCreateAPIView):
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+        
         ambulances_with_eta = assign_ambulance(serializer.validated_data)
+        
+        if ambulances_with_eta:
+            closest_ambulance = ambulances_with_eta[0][0] 
+            
+            serializer.validated_data["assigned_ambulance"] = closest_ambulance
+            serializer.validated_data["assigned_ambulance_user_id"] = closest_ambulance.user.id
+
         ambulances_data = [
             {
                 "ambulance": AmbulanceSerializer(amb[0]).data,
@@ -90,7 +98,9 @@ class ListCreateAccidentReport(generics.ListCreateAPIView):
             }
             for amb in ambulances_with_eta
         ]
+        
         self.perform_create(serializer)
+        
         headers = self.get_success_headers(serializer.data)
         return Response(
             {

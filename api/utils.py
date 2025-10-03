@@ -46,9 +46,13 @@ def assign_ambulance(data):
             )
             ambulances_with_eta.append((ambulance, estimated_time))
 
-
         ambulances_with_eta.sort(key=lambda x: x[1])
 
+        closest_ambulance = ambulances_with_eta[0][0]
+        closest_ambulance.status = "in_use"
+        closest_ambulance.save()
+
         return ambulances_with_eta
+    
     else:
         return []
