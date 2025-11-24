@@ -40,5 +40,15 @@
       "date_joined": "2025-06-15T10:12:00Z",
       "email": "admin@admin.com"
     }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "username": "hospital_user_2",
+      "password": "pbkdf2_sha256$870000$tz9IniMlpB5uIbeUHE1htF$6NSXnVq1KCg7nz3ji31CZFkc+tMIdmgCZeaHFU7B+PM=",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
   }
 ]
