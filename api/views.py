@@ -1,8 +1,8 @@
-from .serializers import AdminSerializer, HospitalSerializer, AmbulanceSerializer, PatientSerializer, AccidentReportSerializer
+from .serializers import AdminSerializer, HospitalSerializer, AmbulanceSerializer, PatientSerializer, AccidentReportSerializer, HospitalCreationSerializer
 from .models import Admin, Hospital, Ambulance, Patient, AccidentReport
 from rest_framework import generics
 from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework import status
 from authenticationapi.permissions import CanViewAdmin, CanViewHospital, CanViewAmbulance, CanViewPatient, CanCreateReadAmbulance, CanDetailUpdateAmbulance, CanListCreateAccidentReport, CanReadUpdateDestroyAccidentReport
@@ -22,6 +22,9 @@ class HospitalList(generics.ListAPIView):
     queryset = Hospital.objects.all()
     serializer_class = HospitalSerializer
     permission_classes = [IsAuthenticated, CanViewHospital]
+
+class HospitalCreate(generics.CreateAPIView):
+    serializer_class = HospitalCreationSerializer
 
 # Ambulance operations
 class AmbulanceList(generics.ListAPIView):

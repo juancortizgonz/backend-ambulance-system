@@ -11,11 +11,31 @@
       "phone_number": "6025186000",
       "bed_capacity": 800,
       "is_available": true,
-      "latitude": 3.437222,
-      "longitude": -76.520555,
+      "latitude": 3.430441,
+      "longitude": -76.544879,
       "description": "Hospital de tercer nivel con amplia capacidad de camas.",
       "created_at": "2025-06-15T11:00:00Z",
       "user_id": 1
+    }
+  },
+
+  {
+    "model": "api.hospital",
+    "pk": 2,
+    "fields": {
+      "user": 5,
+      "name": "Clinica Nuestra Señora de los Remedios",
+      "level": 3,
+      "classification": 1,
+      "address": "Av. 2 Nte. #24N-157",
+      "phone_number": "6025186000",
+      "bed_capacity": 500,
+      "is_available": true,
+      "latitude": 3.462993,
+      "longitude": -76.522532,
+      "description": "Hospital de tercer nivel con amplia capacidad de camas.",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 5
     }
   }
 ]

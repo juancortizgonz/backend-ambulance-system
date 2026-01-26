@@ -123,6 +123,10 @@ To load the sample data uses the following command:
 python manage.py loaddata api/fixtures/*.json
 ```
 
+### Default password:
+
+### Cali1230*
+
 ---
 
 ## 🔑 Authentication

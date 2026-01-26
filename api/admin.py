@@ -34,6 +34,17 @@ class HospitalAdmin(admin.ModelAdmin):
 class AccidentReportAdmin(admin.ModelAdmin):
     pass
 
+@admin.register(DocumentType)
+class DocumentTypeAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')
+    ordering = ('-name',)
+
+@admin.register(AmbulanceDocument)
+class AmbulanceDocumentAdmin(admin.ModelAdmin):
+    list_display = ('ambulance', 'document_type', 'document_number', 'issue_date')
+    ordering = ('-expiration_date',)
+    
+"""
 admin.register(Patient)
 admin.register(DocumentType)
 admin.register(AmbulanceDocument)
@@ -43,3 +54,4 @@ admin.register(User, UserAdmin)
 admin.register(Group, GroupAdmin)
 
 admin.register(Token)
+"""

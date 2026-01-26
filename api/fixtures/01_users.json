@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
       "username": "hospital_user_1",
-      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pbkdf2_sha256$870000$tz9IniMlpB5uIbeUHE1htF$6NSXnVq1KCg7nz3ji31CZFkc+tMIdmgCZeaHFU7B+PM=",
       "is_active": true,
       "date_joined": "2025-06-15T10:00:00Z"
     }
@@ -14,7 +14,7 @@
     "pk": 2,
     "fields": {
       "username": "ambulance_user_1",
-      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pbkdf2_sha256$870000$tz9IniMlpB5uIbeUHE1htF$6NSXnVq1KCg7nz3ji31CZFkc+tMIdmgCZeaHFU7B+PM=",
       "is_active": true,
       "date_joined": "2025-06-15T10:05:00Z"
     }
@@ -24,7 +24,7 @@
     "pk": 3,
     "fields": {
       "username": "general_user",
-      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "password": "pbkdf2_sha256$870000$tz9IniMlpB5uIbeUHE1htF$6NSXnVq1KCg7nz3ji31CZFkc+tMIdmgCZeaHFU7B+PM=",
       "is_active": true,
       "date_joined": "2025-06-15T10:10:00Z",
       "email": "general_user@example.com"
@@ -34,11 +34,21 @@
     "model": "auth.user",
     "pk": 4,
     "fields": {
-      "username": "admin_user_1",
-      "password": "password",
+      "username": "admin01",
+      "password": "pbkdf2_sha256$870000$tz9IniMlpB5uIbeUHE1htF$6NSXnVq1KCg7nz3ji31CZFkc+tMIdmgCZeaHFU7B+PM=",
       "is_active": true,
       "date_joined": "2025-06-15T10:12:00Z",
-      "email": "admin_user@example.com"
+      "email": "admin@admin.com"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "username": "hospital_user_2",
+      "password": "pbkdf2_sha256$870000$tz9IniMlpB5uIbeUHE1htF$6NSXnVq1KCg7nz3ji31CZFkc+tMIdmgCZeaHFU7B+PM=",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
     }
   }
 ]
