@@ -3,7 +3,7 @@ Django~=5.1.2
 djangorestframework~=3.14.0
 django-environ
 drf-spectacular
-psycopg2
+psycopg2-binary
 django-cors-headers
 requests
 celery
