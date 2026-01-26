@@ -17,5 +17,632 @@
       "created_at": "2025-06-15T11:00:00Z",
       "user_id": 1
     }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 2,
+    "fields": {
+      "user": 5,
+      "name": "CENTRO MEDICO IP SALUD SAS",
+      "level": 1,
+      "classification": 1,
+      "address": "CRA 28F # 72U - 62",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4179900038317106,
+      "longitude": -76.49428477482537,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 5
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 3,
+    "fields": {
+      "user": 6,
+      "name": "E.S.E. HOSPITAL CARLOS CARMONA MONTOYA IPS",
+      "level": 1,
+      "classification": 1,
+      "address": "CRA 43 # 39A-00",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4097346950082525,
+      "longitude": -76.51460351715434,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 6
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 4,
+    "fields": {
+      "user": 7,
+      "name": "IPS SALUD SURA CHIPICHAPE CALI",
+      "level": 1,
+      "classification": 1,
+      "address": "Avenida 6A BIS# 35 Norte 64",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.474023360692424,
+      "longitude": -76.52758931900307,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 7
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 5,
+    "fields": {
+      "user": 8,
+      "name": "CLINICA VERSALLES",
+      "level": 2,
+      "classification": 1,
+      "address": "TV 103 CL 95",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4272289687746884,
+      "longitude": -76.47709126231841,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 8
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 6,
+    "fields": {
+      "user": 9,
+      "name": "E.S.E. RED DE SALUD DEL NORTE EMPRESA SOCIAL DEL ESTADO HOSPITAL JOAQUIN PAZ BORRERO",
+      "level": 1,
+      "classification": 1,
+      "address": "CRA 7A BIS CALLE 72 ESQUINA",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4653483716914804,
+      "longitude": -76.48236930550964,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 9
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 7,
+    "fields": {
+      "user": 10,
+      "name": "E.S.E. RED DE SALUD DEL ORIENTE EMPRESA SOCIAL DEL ESTADO HOSPITAL CARLOS HOLMES TRUJILLO",
+      "level": 1,
+      "classification": 1,
+      "address": "CALLE 72U CRA 28E",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4190451621461087,
+      "longitude": -76.49404263249647,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 10
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 8,
+    "fields": {
+      "user": 11,
+      "name": "CENTRO DE SALUD DECEPAZ",
+      "level": 1,
+      "classification": 1,
+      "address": "CRA 26 # 123-10",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4224994294077558,
+      "longitude": -76.46406357482545,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 11
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 9,
+    "fields": {
+      "user": 12,
+      "name": "E.S.E. RED DE SALUD DEL CENTRO EMPRESA SOCIAL DEL ESTADO HOSPITAL PRIMITIVO IGLESIAS",
+      "level": 1,
+      "classification": 1,
+      "address": "CRA 16A # 33D-20",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4434182858828786,
+      "longitude": -76.51014826133203,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 12
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 10,
+    "fields": {
+      "user": 13,
+      "name": "CENTRO DE SALUD SILOE",
+      "level": 1,
+      "classification": 1,
+      "address": "CALLE 1 # 50-51",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4179450598968617,
+      "longitude": -76.5541346459899,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 13
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 11,
+    "fields": {
+      "user": 14,
+      "name": "CENTRO DE SALUD TERRON COLORADO",
+      "level": 1,
+      "classification": 1,
+      "address": "AV 4A Oeste # 18 Oeste - 69",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.452752430589198,
+      "longitude": -76.55917673249643,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 14
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 12,
+    "fields": {
+      "user": 15,
+      "name": "E.S.E. RED DE SALUD DE LADERA EMPRESA SOCIAL DEL ESTADO HOSPITAL CAÑAVERALEJO",
+      "level": 1,
+      "classification": 1,
+      "address": "CALLE 3 OESTE # 12A-20",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.445316113795748,
+      "longitude": -76.54330769016748,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 15
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 13,
+    "fields": {
+      "user": 16,
+      "name": "EPS SANITAS CENTRO MÉDICO UNIDAD DE URGENCIAS CALI",
+      "level": 1,
+      "classification": 1,
+      "address": "CL. 5E NRO. 43 05",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.419522081527091,
+      "longitude": -76.54338223434515,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 16
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 14,
+    "fields": {
+      "user": 17,
+      "name": "UNIDAD MEDICA QUIRURGICA SALUD CALI",
+      "level": 1,
+      "classification": 1,
+      "address": "CL 9 # 44 - 105",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4158019334331096,
+      "longitude": -76.5401373766741,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 17
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 15,
+    "fields": {
+      "user": 18,
+      "name": "TRAUMAORIENTE DEL VALLE",
+      "level": 1,
+      "classification": 1,
+      "address": "CLL 58 NRO 8 05",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4525834463495393,
+      "longitude": -76.4939177766741,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 18
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 16,
+    "fields": {
+      "user": 19,
+      "name": "IPS SURA PASO ANCHO CALI",
+      "level": 2,
+      "classification": 1,
+      "address": "CARRERA 50 # 12A-90",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4087781345360577,
+      "longitude": -76.53501390366094,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 19
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 17,
+    "fields": {
+      "user": 20,
+      "name": "FUNDACION CLINICA INFANTIL CLUB NOEL",
+      "level": 2,
+      "classification": 1,
+      "address": "CALLE 5 # 22-76",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4400852246601286,
+      "longitude": -76.53795540366094,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 20
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 18,
+    "fields": {
+      "user": 21,
+      "name": "CLINICA NUESTRA",
+      "level": 2,
+      "classification": 1,
+      "address": "CL 10 # 33-51",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4253684899503476,
+      "longitude": -76.53349367667407,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 21
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 19,
+    "fields": {
+      "user": 22,
+      "name": "HOSPITAL SAN JUAN DE DIOS",
+      "level": 2,
+      "classification": 1,
+      "address": "CRA 4 # 17-67",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.455327148530425,
+      "longitude": -76.52764309016757,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 22
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 20,
+    "fields": {
+      "user": 23,
+      "name": "E.S.E. HOSPITAL DEPARTAMENTAL MARIO CORREA RENGIFO",
+      "level": 2,
+      "classification": 1,
+      "address": "calle 2 A oeste No.76 - 35",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.3866726177916933,
+      "longitude": -76.55872958831881,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 23
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 21,
+    "fields": {
+      "user": 24,
+      "name": "HOSPITAL ISAIAS DUARTE CANCINO EMPRESA SOCIAL DEL ESTADO",
+      "level": 2,
+      "classification": 1,
+      "address": "CL 96 # 28 -E3 - 01",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4114419144669648,
+      "longitude": -76.48563256133197,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 24
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 22,
+    "fields": {
+      "user": 25,
+      "name": "CLINICA VALLE SALUD SEDE SUR",
+      "level": 2,
+      "classification": 1,
+      "address": "CRA 40 # 9 - 15",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4572945572417813,
+      "longitude": -76.53223923249647,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 25
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 23,
+    "fields": {
+      "user": 26,
+      "name": "CLINICA DESA S.A.S",
+      "level": 2,
+      "classification": 1,
+      "address": "CALLE 5D NRO. 38 A 35",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.423111961369498,
+      "longitude": -76.54206238831891,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 26
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 24,
+    "fields": {
+      "user": 27,
+      "name": "CLINICA NUEVA RAFAEL URIBE URIBE SAS",
+      "level": 2,
+      "classification": 1,
+      "address": "CALLE 25 NORTE 2BN - 17",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.466509897782486,
+      "longitude": -76.52478679016757,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 27
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 25,
+    "fields": {
+      "user": 28,
+      "name": "CLINICA CRISTO REY CALI",
+      "level": 2,
+      "classification": 1,
+      "address": "Av. 4 Nte. #22N-46, San Vicente",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.462834407492079,
+      "longitude": -76.52731763249645,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 28
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 26,
+    "fields": {
+      "user": 29,
+      "name": "DIME CLINICA NEUROCARDIOVASCULAR S.A.",
+      "level": 3,
+      "classification": 1,
+      "address": "AV 5 NORTE # 20N-75",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4617619724659088,
+      "longitude": -76.5291436055096,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 29
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 27,
+    "fields": {
+      "user": 30,
+      "name": "CLINICA IMBANACO S.A.S. SEDE PRINCIPAL",
+      "level": 3,
+      "classification": 1,
+      "address": "CRA. 38 BIS No. 5 B2 - 04",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4273834458766546,
+      "longitude": -76.54545206231842,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 30
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 28,
+    "fields": {
+      "user": 31,
+      "name": "CLINICA NUESTRA SEÑORA DE LOS REMEDIOS",
+      "level": 3,
+      "classification": 1,
+      "address": "AV 2N # 24-157",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.462930572213678,
+      "longitude": -76.52246610366089,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 31
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 29,
+    "fields": {
+      "user": 32,
+      "name": "FUNDACIÓN VALLE DEL LILI SEDE LIMONAR",
+      "level": 3,
+      "classification": 1,
+      "address": "KR 98 # 18-49",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.393526477023322,
+      "longitude": -76.525628176674,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 32
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 30,
+    "fields": {
+      "user": 33,
+      "name": "CLINICA DE OCCIDENTE",
+      "level": 3,
+      "classification": 1,
+      "address": "CALLE 18 NORTE # 5N-34",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4605115541847953,
+      "longitude": -76.53044826133208,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 33
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 31,
+    "fields": {
+      "user": 34,
+      "name": "CLINICA REY DAVID",
+      "level": 3,
+      "classification": 1,
+      "address": "KR 34 # 7-00",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.42709654130562,
+      "longitude": -76.53856471900309,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 34
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 32,
+    "fields": {
+      "user": 35,
+      "name": "CLINICA COLSANITAS S.A SEBASTIAN DEL BELALCAZAR",
+      "level": 3,
+      "classification": 1,
+      "address": "AV 4 NORTE # 7N-81",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.454945020629523,
+      "longitude": -76.53719557667414,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 35
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 33,
+    "fields": {
+      "user": 36,
+      "name": "CLINICA FARALLONES S.A.",
+      "level": 3,
+      "classification": 1,
+      "address": "Calle 9c # 50-25",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4102211638279547,
+      "longitude": -76.53950974598997,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 36
+    }
+  },
+  {
+    "model": "api.hospital",
+    "pk": 34,
+    "fields": {
+      "user": 37,
+      "name": "CLINICA COLOMBIA ES",
+      "level": 3,
+      "classification": 1,
+      "address": "CRA 46 # 9C-85",
+      "phone_number": "6020000000",
+      "bed_capacity": 800,
+      "is_available": true,
+      "latitude": 3.4150015357051458,
+      "longitude": -76.53806433434518,
+      "description": "",
+      "created_at": "2025-06-15T11:00:00Z",
+      "user_id": 37
+    }
   }
 ]

@@ -21,6 +21,56 @@
   },
   {
     "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "ambulance_user_2",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:05:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "ambulance_user_3",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:05:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "ambulance_user_4",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:05:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "ambulance_user_5",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:05:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "ambulance_user_6",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:05:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
     "pk": 3,
     "fields": {
       "username": "general_user",
@@ -39,6 +89,336 @@
       "is_active": true,
       "date_joined": "2025-06-15T10:12:00Z",
       "email": "admin_user@example.com"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "username": "hospital_user_5",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "username": "hospital_user_6",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "username": "hospital_user_7",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+      "username": "hospital_user_8",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+      "username": "hospital_user_9",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+      "username": "hospital_user_10",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+      "username": "hospital_user_11",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+      "username": "hospital_user_12",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+      "username": "hospital_user_13",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+      "username": "hospital_user_14",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+      "username": "hospital_user_15",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+      "username": "hospital_user_16",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+      "username": "hospital_user_17",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 18,
+    "fields": {
+      "username": "hospital_user_18",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 19,
+    "fields": {
+      "username": "hospital_user_19",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 20,
+    "fields": {
+      "username": "hospital_user_20",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 21,
+    "fields": {
+      "username": "hospital_user_21",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 22,
+    "fields": {
+      "username": "hospital_user_22",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 23,
+    "fields": {
+      "username": "hospital_user_23",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 24,
+    "fields": {
+      "username": "hospital_user_24",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 25,
+    "fields": {
+      "username": "hospital_user_25",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 26,
+    "fields": {
+      "username": "hospital_user_26",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 27,
+    "fields": {
+      "username": "hospital_user_27",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 28,
+    "fields": {
+      "username": "hospital_user_28",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 29,
+    "fields": {
+      "username": "hospital_user_29",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 30,
+    "fields": {
+      "username": "hospital_user_30",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 31,
+    "fields": {
+      "username": "hospital_user_31",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 32,
+    "fields": {
+      "username": "hospital_user_32",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 33,
+    "fields": {
+      "username": "hospital_user_33",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 34,
+    "fields": {
+      "username": "hospital_user_34",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 35,
+    "fields": {
+      "username": "hospital_user_35",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 36,
+    "fields": {
+      "username": "hospital_user_36",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 37,
+    "fields": {
+      "username": "hospital_user_37",
+      "password": "pbkdf2_sha256$600000$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "is_active": true,
+      "date_joined": "2025-06-15T10:00:00Z"
     }
   }
 ]
