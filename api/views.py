@@ -111,6 +111,38 @@ class ListCreateAccidentReport(generics.ListCreateAPIView):
             headers=headers
         )
 
+class ListCreateAccidentReportBulk(generics.CreateAPIView):
+    serializer_class = AccidentReportSerializer
+    permission_classes = [IsAuthenticated, CanListCreateAccidentReport]
+
+    def get_serializer(self, *args, **kwargs):
+        kwargs['many'] = True
+        return super(ListCreateAccidentReportBulk, self).get_serializer(*args, **kwargs)
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        created_reports = []
+        for report_data in serializer.validated_data:
+            # Create a new serializer instance for each report to handle creation individually
+            report_serializer = AccidentReportSerializer(data=report_data)
+            report_serializer.is_valid(raise_exception=True) # Should be valid
+
+            ambulances_with_eta = assign_ambulance(report_serializer.validated_data)
+            
+            if ambulances_with_eta:
+                closest_ambulance = ambulances_with_eta[0][0]
+                # We can't modify validated_data, so we pass it to create
+                report_serializer.save(assigned_ambulance=closest_ambulance, assigned_ambulance_user_id=closest_ambulance.user.id)
+            else:
+                report_serializer.save()
+            
+            created_reports.append(report_serializer.data)
+
+        return Response(created_reports, status=status.HTTP_201_CREATED)
+
+
 class AccidentReportRUD(generics.RetrieveUpdateDestroyAPIView):
     queryset = AccidentReport.objects.all()
     serializer_class = AccidentReportSerializer

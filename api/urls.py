@@ -13,5 +13,6 @@ urlpatterns = [
     path("ambulances/plate-number/<str:plate_number>/", views.UpdateAmbulancesByPlateNumber.as_view(), name="update-ambulances-by-plate-number"),
 
     path("accident-reports/", views.ListCreateAccidentReport.as_view(), name="accident-report-list-create"),
+    path("accident-reports-bulk/", views.ListCreateAccidentReportBulk.as_view(), name="accident-report-bulk-create"),
     path("accident-reports/<int:pk>/", views.AccidentReportRUD.as_view(), name="accident-report-rud"),
 ]
