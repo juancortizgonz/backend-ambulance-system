@@ -110,7 +110,7 @@ class AccidentReport(models.Model):
     type_place = models.SmallIntegerField(choices=AccidentReportOptions.type_place, default=1)
     people_involved = models.IntegerField(default=1, null=False)
     assigned_ambulance = models.ForeignKey(Ambulance, on_delete=SET_NULL, null=True, blank=True, default=None)
-    additional_notes = models.CharField(max_length=255, blank=True, null=True)
+    additional_notes = models.TextField(blank=True, null=True)
     assigned_ambulance_user_id = models.IntegerField(blank=True, null=True, default=None)
 
 class DocumentType(models.Model):
