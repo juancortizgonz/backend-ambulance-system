@@ -1,6 +1,7 @@
 import requests
 import math
 import environ
+from datetime import datetime, timezone, timedelta
 
 from .models import Ambulance
 
@@ -10,26 +11,49 @@ environ.Env.read_env()
 def get_estimated_time(ambulance_lat, ambulance_long, accident_lat, accident_long, method="distancematrix_ai"):
     if method == "google":
         try:
-            response = requests.get(
-                "https://maps.googleapis.com/maps/api/distancematrix/json",
-                params={
-                    "origins": f"{ambulance_lat},{ambulance_long}",
-                    "destinations": f"{accident_lat},{accident_long}",
-                    "key": env("GOOGLE_DISTANCE_MATRIX_API_KEY")
+            googleApiKey = env("GOOGLE_DISTANCE_MATRIX_API_KEY")
+            url = "https://routes.googleapis.com/directions/v2:computeRoutes"
+            
+            headers = {
+                'Content-Type': 'application/json',
+                'X-Goog-Api-Key': googleApiKey,
+                'X-Goog-FieldMask': 'routes.duration,routes.distanceMeters'
+            }
+
+            payload = {
+                "origin": {
+                    "location": { "latLng": { "latitude": float(ambulance_lat), "longitude": float(ambulance_long) } }
+                },
+                "destination": {
+                    "location": { "latLng": { "latitude": float(accident_lat), "longitude": float(accident_long) } }
+                },
+                "travelMode": "DRIVE",
+                "routingPreference": "TRAFFIC_AWARE_OPTIMAL",
+                "departureTime": (datetime.now(timezone.utc) + timedelta(seconds=60)).isoformat(),
+                "routeModifiers": {
+                    "avoidFerries": True,
+                    "avoidTolls": False
                 }
-            )
+            }
+
+            response = requests.post(url, json=payload, headers=headers)
             response.raise_for_status()
-            elements = response.json().get("rows")[0].get("elements")[0]
-            if elements.get('status') != 'OK':
-                print(f"Error from Google API: {elements.get('status')}")
+            
+            json_response = response.json()
+            routes = json_response.get("routes")
+            
+            if not routes:
                 return None
-            estimated_time_in_secs = elements.get("duration").get("value")
+
+            duration_str = routes[0].get("duration", "0s")
+            estimated_time_in_secs = int(duration_str.rstrip('s'))
+            
             return math.ceil(estimated_time_in_secs / 60)
         except requests.RequestException as e:
-            print(f"Error fetching estimated time from Google: {e}")
+            print(f"Error fetching estimated time from Google Routes API: {e}")
             return None
-        except (KeyError, IndexError) as e:
-            print(f"Error parsing Google Distance Matrix API response: {e}")
+        except (KeyError, IndexError, ValueError) as e:
+            print(f"Error parsing Google Routes API response: {e}")
             return None
 
     elif method == "distancematrix_ai":

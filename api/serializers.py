@@ -12,6 +12,9 @@ class HospitalSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class AmbulanceSerializer(serializers.ModelSerializer):
+    latitude = serializers.FloatField()
+    longitude = serializers.FloatField()
+
     class Meta:
         model = Ambulance
         fields = '__all__'
