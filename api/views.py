@@ -6,7 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
 from authenticationapi.permissions import CanViewAdmin, CanViewHospital, CanViewAmbulance, CanViewPatient, CanCreateReadAmbulance, CanDetailUpdateAmbulance, CanListCreateAccidentReport, CanReadUpdateDestroyAccidentReport
-from .utils import assign_ambulance
+from .utils import assign_ambulance, find_recommended_ambulances
 
 # We'll use generics.ListAPIView to list all the objects of a model for now
 # https://www.django-rest-framework.org/api-guide/generic-views/
@@ -83,7 +83,8 @@ class ListCreateAccidentReport(generics.ListCreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         
-        ambulances_with_eta = assign_ambulance(serializer.validated_data)
+        eta_method = request.data.get("eta_method", "distancematrix_ai")
+        ambulances_with_eta = assign_ambulance(serializer.validated_data, eta_method)
         
         if ambulances_with_eta:
             closest_ambulance = ambulances_with_eta[0][0] 
@@ -123,13 +124,14 @@ class ListCreateAccidentReportBulk(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
+        eta_method = request.query_params.get("eta_method", "distancematrix_ai")
         created_reports = []
         for report_data in serializer.validated_data:
             # Create a new serializer instance for each report to handle creation individually
             report_serializer = AccidentReportSerializer(data=report_data)
             report_serializer.is_valid(raise_exception=True) # Should be valid
 
-            ambulances_with_eta = assign_ambulance(report_serializer.validated_data)
+            ambulances_with_eta = assign_ambulance(report_serializer.validated_data, eta_method)
             
             if ambulances_with_eta:
                 closest_ambulance = ambulances_with_eta[0][0]
@@ -162,7 +164,8 @@ class ListRecommendedAmbulances(generics.ListAPIView):
         except AccidentReport.DoesNotExist:
             return Response({"error": "Accident report not found"}, status=status.HTTP_404_NOT_FOUND)
 
-        ambulances_with_eta = assign_ambulance(accident_report.__dict__)
+        eta_method = request.query_params.get("eta_method", "distancematrix_ai")
+        ambulances_with_eta = find_recommended_ambulances(accident_report.__dict__, eta_method)
         ambulances_data = [
             {
                 "ambulance": AmbulanceSerializer(amb[0]).data,
